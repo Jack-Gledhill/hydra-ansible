@@ -1,0 +1,13 @@
+- name: Download and apply boostrap manifests
+  hosts: control_plane[0]
+  any_errors_fatal: true
+
+  tasks:
+    - name: Clone bootstrap repository
+      ansible.builtin.git:
+        repo: https://github.com/Jack-Gledhill/hydra-bootstrap
+        dest: /tmp/bootstrap
+        force: true
+
+    - name: Apply the Kustomization
+      ansible.builtin.command: kubectl apply --server-side -k /tmp/bootstrap
