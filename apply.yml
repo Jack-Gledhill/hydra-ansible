@@ -3,6 +3,12 @@
   any_errors_fatal: true
 
   tasks:
+    - name: Ensure Git is installed
+      ansible.builtin.apt:
+        name:
+          - git
+        state: present
+
     - name: Clone bootstrap repository
       ansible.builtin.git:
         repo: https://github.com/Jack-Gledhill/hydra-bootstrap
@@ -10,4 +16,4 @@
         force: true
 
     - name: Apply the Kustomization
-      ansible.builtin.command: kubectl apply --server-side -k /tmp/bootstrap
+      ansible.builtin.command: kubectl apply --server-side --force-conflicts -k /tmp/bootstrap
