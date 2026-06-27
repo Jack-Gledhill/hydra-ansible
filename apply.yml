@@ -11,7 +11,8 @@
 
     - name: Clone bootstrap repository
       ansible.builtin.git:
-        repo: https://github.com/Jack-Gledhill/hydra-bootstrap
+        repo: {{ bootstrap.repo }}
+        version: {{ bootstrap.version }}
         dest: /tmp/bootstrap
         force: true
 

@@ -11,6 +11,10 @@ all:
       join_ip: "{{ hostvars[groups['control_plane'][0]]['ansible_host'] }}"
       token: Password123
 
+    bootstrap:
+      repo: https://github.com/Jack-Gledhill/hydra-bootstrap
+      version: bootstrap # Can be HEAD, a branch name or a tag name
+
   hosts:
     host1:
       ansible_host: 1.1.1.1
