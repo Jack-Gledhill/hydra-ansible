@@ -45,7 +45,7 @@ The table below lists all the available playbooks and what they do.
 
 ## Special Notes
 
-## Deploying on Raspberry Pi with SSDs
+### Deploying on Raspberry Pi with SSDs
 
 Additional setup is needed to deploy k3s to Raspberry Pis using SSD storage.
 After flashing the OS onto the SSD drives, you should modify the `config.txt` file in the `bootfs` partition and add the following line:
