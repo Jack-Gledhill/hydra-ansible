@@ -24,6 +24,7 @@ control_plane:
       disable:
         - traefik
         - local-storage
+        - servicelb
       disable_cloud_controller: true
       network:
         domain: cluster.local
